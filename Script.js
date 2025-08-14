@@ -1,35 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    const cityInput = document.getElementById('city');
+const cityInput = document.getElementById("cityInput");
+const getWeatherButton = document.getElementById("getWeather");
+const locationDisplay = document.getElementById("location");
+const temperatureDisplay = document.getElementById("temperature");
+const descriptionDisplay = document.getElementById("description");
 
-    // Create a div to show weather results
-    let resultDiv = document.createElement('div');
-    resultDiv.id = 'weather-result';
-    form.parentNode.insertBefore(resultDiv, form.nextSibling);
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const city = cityInput.value.trim();
-        if (city === "") {
-            resultDiv.textContent = "Please enter a city name.";
-            return;
-        }
-        // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=YOUR_API_KEY&units=metric`)
-            .then(response => {
-                if (!response.ok) throw new Error("City not found");
-                return response.json();
-            })
-            .then(data => {
-                resultDiv.innerHTML = `
-                    <h3>Weather in ${data.name}</h3>
-                    <p>Temperature: ${data.main.temp}°C</p>
-                    <p>Weather: ${data.weather[0].description}</p>
-                    <p>Humidity: ${data.main.humidity}%</p>
-                `;
-            })
-            .catch(error => {
-                resultDiv.textContent = "Error: " + error.message;
-            });
-    });
+getWeatherButton.addEventListener("click", () => {
+    const city = cityInput.value;
+    if (city) {
+        getWeatherData(city);
+    }
 });
+
+async function getWeatherData(city) {
+    const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (response.ok) {
+            locationDisplay.textContent = `Location: ${data.name}, ${data.sys.country}`;
+            temperatureDisplay.textContent = `Temperature: ${data.main.temp}°C`;
+            descriptionDisplay.textContent = `Description: ${data.weather[0].description}`;
+        } else {
+            locationDisplay.textContent = "Error fetching weather data.";
+            temperatureDisplay.textContent = "";
+            descriptionDisplay.textContent = "";
+        }
+    } catch (error) {
+        locationDisplay.textContent = "An error occurred.";
+        temperatureDisplay.textContent = "";
+        descriptionDisplay.textContent = "";
+    }
+}
