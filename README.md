@@ -13,3 +13,8 @@ This is a simple climate and weather information project. It displays climate fa
 
 ## How to Use
 1. Clone the repository:
+2. Open the `Index.html` file in your browser.
+3. Enter your city name in the form to get the current weather.
+
+## Credits
+Created by priyanga327 for hackathon.
