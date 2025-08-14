@@ -3,39 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate & Weather Project</title>
-    <link rel="stylesheet" href="Style.css">
+    <title>Simple Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Climate & Weather Project</h1>
-        
-        <section>
-            <h2>Climate Facts</h2>
-            <ul>
-                <li>The Earth's temperature is rising.</li>
-                <li>Polar ice caps are melting faster.</li>
-                <li>Extreme weather events are increasing.</li>
-                <li>Protecting the climate is everyone's responsibility.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Check Weather in Your City</h2>
-            <form class="weather-form">
-                <label for="city">Enter City Name:</label>
-                <input type="text" id="city" name="city" required>
-                <button type="submit">Get Weather</button>
-            </form>
-            <div id="weather-result"></div>
-        </section>
+        <h1>Weather Information</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="getWeather">Get Weather</button>
+        <div id="weatherInfo">
+            <div id="location"></div>
+            <div id="temperature"></div>
+            <div id="description"></div>
+        </div>
     </div>
-    
-    <footer>
-        &copy; 2025 Climate & Weather Project. Created by priyanga327.
-    </footer>
-    
-    <script src="Script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
   
