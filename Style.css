@@ -1,82 +1,9 @@
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(to top right, #a7e9af, #e0f7fa);
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
 .container {
-    max-width: 700px;
-    margin: 40px auto;
-    background: #ffffffcc;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
-
-h1, h2 {
-    color: #00796b;
-    margin-bottom: 12px;
-}
-
-h1 {
-    font-size: 2.2em;
-}
-
-h2 {
-    font-size: 1.4em;
-}
-
-ul {
-    padding-left: 20px;
-    line-height: 1.7;
-}
-
-.weather-form {
-    margin-top: 28px;
-}
-
-.weather-form label {
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-.weather-form input[type="text"] {
-    padding: 7px 12px;
-    border: 1px solid #77dd77;
-    border-radius: 5px;
-    font-size: 1em;
-    margin-right: 8px;
-    outline: none;
-}
-
-.weather-form button {
-    padding: 8px 18px;
-    background: #00796b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.weather-form button:hover {
-    background: #004d40;
-}
-
-#weather-result {
-    margin-top: 20px;
-    background: #e0ffe0;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-footer {
-    margin-top: 40px;
+    font-family: sans-serif;
     text-align: center;
-    color: #555;
-    font-size: 0.95em;
+    margin-top: 50px;
+}
+
+#weatherInfo {
+    margin-top: 20px;
 }
