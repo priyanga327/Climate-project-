@@ -4,42 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate & Weather Project</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #e0f7fa; }
-        h1 { color: #00796b; }
-        .weather-form { margin-top: 20px; }
-        .facts { background: #fff; padding: 10px; border-radius: 5px; margin-top: 20px; }
-        footer { margin-top: 40px; color: #555; font-size: 0.9em; }
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-
-    <h1>Climate & Weather Information</h1>
-    <p>Welcome to our climate and weather project! Here you can learn interesting facts about climate change and check current weather in your city.</p>
-
-    <div class="facts">
-        <h2>Climate Facts</h2>
-        <ul>
-            <li>The Earth’s average temperature has increased by 1°C since the 19th century.</li>
-            <li>Polar ice caps are melting at an accelerated pace.</li>
-            <li>Extreme weather events are becoming more frequent.</li>
-            <li>Reducing carbon emissions can help slow climate change.</li>
-        </ul>
+    <div class="container">
+        <h1>Climate & Weather Project</h1>
+        
+        <section>
+            <h2>Climate Facts</h2>
+            <ul>
+                <li>The Earth's temperature is rising.</li>
+                <li>Polar ice caps are melting faster.</li>
+                <li>Extreme weather events are increasing.</li>
+                <li>Protecting the climate is everyone's responsibility.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Check Weather in Your City</h2>
+            <form class="weather-form">
+                <label for="city">Enter City Name:</label>
+                <input type="text" id="city" name="city" required>
+                <button type="submit">Get Weather</button>
+            </form>
+            <div id="weather-result"></div>
+        </section>
     </div>
-
-    <div class="weather-form">
-        <h2>Check Weather in Your City</h2>
-        <form>
-            <label for="city">Enter City Name:</label>
-            <input type="text" id="city" name="city" required>
-            <button type="submit">Get Weather</button>
-        </form>
-        <!-- You can add JavaScript to fetch real weather data from an API -->
-    </div>
-
+    
     <footer>
-        &copy; 2025 Climate & Weather Project. Made with &#x2764; for hackathons.
+        &copy; 2025 Climate & Weather Project. Created by priyanga327.
     </footer>
+    
+    <script src="Script.js"></script>
 </body>
 </html>
   
